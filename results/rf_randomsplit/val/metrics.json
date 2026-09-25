@@ -1,0 +1,29 @@
+{
+  "name": "rf_randomsplit (val)",
+  "n": 25942,
+  "accuracy": 0.9648446534577133,
+  "macro_f1": 0.8362390105631619,
+  "macro_f1_defect_only": 0.8178929239495389,
+  "per_class_recall": {
+    "Center": 0.8183,
+    "Donut": 0.8434,
+    "Edge-Loc": 0.6465,
+    "Edge-Ring": 0.9731,
+    "Loc": 0.5158,
+    "Near-full": 1.0,
+    "Random": 0.8308,
+    "Scratch": 0.5363,
+    "none": 0.9954
+  },
+  "per_class_f1": {
+    "Center": 0.8747,
+    "Donut": 0.8589,
+    "Edge-Loc": 0.7248,
+    "Edge-Ring": 0.9775,
+    "Loc": 0.6391,
+    "Near-full": 0.92,
+    "Random": 0.8745,
+    "Scratch": 0.6737,
+    "none": 0.983
+  }
+}

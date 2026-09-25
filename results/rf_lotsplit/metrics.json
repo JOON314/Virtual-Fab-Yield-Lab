@@ -1,0 +1,33 @@
+{
+  "name": "rf_lotsplit (test)",
+  "n": 25938,
+  "accuracy": 0.9642609299097848,
+  "macro_f1": 0.8401137175314138,
+  "macro_f1_defect_only": 0.8222805533391881,
+  "per_class_recall": {
+    "Center": 0.8556,
+    "Donut": 0.8916,
+    "Edge-Loc": 0.6722,
+    "Edge-Ring": 0.9463,
+    "Loc": 0.4972,
+    "Near-full": 0.9565,
+    "Random": 0.8462,
+    "Scratch": 0.4972,
+    "none": 0.995
+  },
+  "per_class_f1": {
+    "Center": 0.8967,
+    "Donut": 0.8757,
+    "Edge-Loc": 0.7387,
+    "Edge-Ring": 0.9618,
+    "Loc": 0.6233,
+    "Near-full": 0.9565,
+    "Random": 0.8943,
+    "Scratch": 0.6312,
+    "none": 0.9828
+  },
+  "split": "lot",
+  "train_n": 121069,
+  "fit_sec": 101.1,
+  "val_macro_f1": 0.8286090833023724
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rf_randomsplit (test)",
+  "n": 25943,
+  "accuracy": 0.9654241992059515,
+  "macro_f1": 0.8270141160976398,
+  "macro_f1_defect_only": 0.8074969317360514,
+  "per_class_recall": {
+    "Center": 0.868,
+    "Donut": 0.7229,
+    "Edge-Loc": 0.6868,
+    "Edge-Ring": 0.9649,
+    "Loc": 0.5028,
+    "Near-full": 1.0,
+    "Random": 0.8231,
+    "Scratch": 0.514,
+    "none": 0.9948
+  },
+  "per_class_f1": {
+    "Center": 0.9104,
+    "Donut": 0.7643,
+    "Edge-Loc": 0.7456,
+    "Edge-Ring": 0.9746,
+    "Loc": 0.6324,
+    "Near-full": 0.9362,
+    "Random": 0.8392,
+    "Scratch": 0.6571,
+    "none": 0.9832
+  },
+  "split": "random",
+  "train_n": 121065,
+  "fit_sec": 104.5,
+  "val_macro_f1": 0.8362390105631619
+}

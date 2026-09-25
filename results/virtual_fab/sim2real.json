@@ -1,0 +1,60 @@
+{
+  "n_per_mechanism": 300,
+  "overall_agreement": 0.917037037037037,
+  "per_mechanism": {
+    "cmp_center_pressure": {
+      "intended": "Center",
+      "hypothesis": "CMP 헤드 중심 압력 과다 / 스핀코팅 중심부 두께 이상",
+      "agreement": 1.0,
+      "most_common_pred": "Center"
+    },
+    "annular_thermal": {
+      "intended": "Donut",
+      "hypothesis": "RTP·베이크 링 형태 온도 불균일",
+      "agreement": 1.0,
+      "most_common_pred": "Donut"
+    },
+    "edge_etch_nonunif": {
+      "intended": "Edge-Ring",
+      "hypothesis": "식각·증착 반경 방향 불균일 (가장자리 플라즈마 밀도 변화)",
+      "agreement": 0.9,
+      "most_common_pred": "Edge-Ring"
+    },
+    "edge_clamp_contact": {
+      "intended": "Edge-Loc",
+      "hypothesis": "척/클램프 접촉·가장자리 국부 오염",
+      "agreement": 0.8966666666666666,
+      "most_common_pred": "Edge-Loc"
+    },
+    "local_particle": {
+      "intended": "Loc",
+      "hypothesis": "국부 파티클 클러스터·국부 공정 이상",
+      "agreement": 0.82,
+      "most_common_pred": "Loc"
+    },
+    "handling_scratch": {
+      "intended": "Scratch",
+      "hypothesis": "웨이퍼 이송·CMP 중 기계적 스크래치",
+      "agreement": 1.0,
+      "most_common_pred": "Scratch"
+    },
+    "chamber_particle": {
+      "intended": "Random",
+      "hypothesis": "챔버 파티클 오염 (공간적으로 무작위)",
+      "agreement": 0.74,
+      "most_common_pred": "Random"
+    },
+    "tool_excursion": {
+      "intended": "Near-full",
+      "hypothesis": "장비 이상으로 웨이퍼 전반 불량",
+      "agreement": 0.8966666666666666,
+      "most_common_pred": "Near-full"
+    },
+    "healthy": {
+      "intended": "none",
+      "hypothesis": "정상 공정 (배경 결함만)",
+      "agreement": 1.0,
+      "most_common_pred": "none"
+    }
+  }
+}

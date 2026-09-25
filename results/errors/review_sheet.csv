@@ -1,0 +1,31 @@
+wafer_idx,true,pred,confidence,verdict(label_noise/model_limit/ambiguous),note
+156967,Edge-Loc,none,0.505,,
+132624,Edge-Loc,none,0.543,,
+104474,Edge-Loc,none,0.944,,
+172707,Edge-Loc,none,0.825,,
+23760,Edge-Loc,none,0.838,,
+83362,Edge-Loc,none,0.473,,
+21103,Loc,none,0.936,,
+39210,Loc,none,0.432,,
+53743,Loc,none,0.531,,
+127535,Loc,none,0.589,,
+123539,Loc,none,0.896,,
+118722,Loc,none,0.466,,
+35482,none,Edge-Loc,0.474,,
+87859,none,Edge-Loc,0.421,,
+18322,none,Edge-Loc,0.67,,
+37161,none,Edge-Loc,0.677,,
+113741,none,Edge-Loc,0.736,,
+160568,none,Edge-Loc,0.487,,
+120144,Edge-Ring,Edge-Loc,0.976,,high-confidence error
+161751,Edge-Loc,none,0.961,,high-confidence error
+108794,Scratch,none,0.96,,high-confidence error
+119638,Loc,Edge-Loc,0.96,,high-confidence error
+29026,Loc,none,0.958,,high-confidence error
+32403,Scratch,none,0.957,,high-confidence error
+63159,Loc,none,0.957,,high-confidence error
+152397,Scratch,Loc,0.954,,high-confidence error
+22033,Scratch,none,0.954,,high-confidence error
+13388,Scratch,none,0.951,,high-confidence error
+25257,Edge-Ring,Edge-Loc,0.95,,high-confidence error
+32863,Loc,none,0.944,,high-confidence error
