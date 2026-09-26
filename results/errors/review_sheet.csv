@@ -1,31 +1,31 @@
-wafer_idx,true,pred,confidence,verdict(label_noise/model_limit/ambiguous),note
-156967,Edge-Loc,none,0.505,,
-132624,Edge-Loc,none,0.543,,
-104474,Edge-Loc,none,0.944,,
-172707,Edge-Loc,none,0.825,,
-23760,Edge-Loc,none,0.838,,
-83362,Edge-Loc,none,0.473,,
-21103,Loc,none,0.936,,
-39210,Loc,none,0.432,,
-53743,Loc,none,0.531,,
-127535,Loc,none,0.589,,
-123539,Loc,none,0.896,,
-118722,Loc,none,0.466,,
-35482,none,Edge-Loc,0.474,,
-87859,none,Edge-Loc,0.421,,
-18322,none,Edge-Loc,0.67,,
-37161,none,Edge-Loc,0.677,,
-113741,none,Edge-Loc,0.736,,
-160568,none,Edge-Loc,0.487,,
-120144,Edge-Ring,Edge-Loc,0.976,,high-confidence error
-161751,Edge-Loc,none,0.961,,high-confidence error
-108794,Scratch,none,0.96,,high-confidence error
-119638,Loc,Edge-Loc,0.96,,high-confidence error
-29026,Loc,none,0.958,,high-confidence error
-32403,Scratch,none,0.957,,high-confidence error
-63159,Loc,none,0.957,,high-confidence error
-152397,Scratch,Loc,0.954,,high-confidence error
-22033,Scratch,none,0.954,,high-confidence error
-13388,Scratch,none,0.951,,high-confidence error
-25257,Edge-Ring,Edge-Loc,0.95,,high-confidence error
-32863,Loc,none,0.944,,high-confidence error
+wafer_idx,true,pred,confidence,verdict,note
+156967,Edge-Loc,none,0.505,model_limit,점이 가장자리에 몰림
+132624,Edge-Loc,none,0.543,ambiguous,점이 고루 분포되어 있음
+104474,Edge-Loc,none,0.944,label_noise,점이 고루 분포되어 있음
+172707,Edge-Loc,none,0.825,model_limit,점이 가장자리에 몰림
+23760,Edge-Loc,none,0.838,model_limit,점이 가장자리에 몰림
+83362,Edge-Loc,none,0.473,label_noise,점이 고루 분포되어 있음
+21103,Loc,none,0.936,label_noise,애매함
+39210,Loc,none,0.432,label_noise,점이 긴선을 이룸
+53743,Loc,none,0.531,label_noise,점이 가장자리에 몰림
+127535,Loc,none,0.589,label_noise,점이 가장자리에 몰림
+123539,Loc,none,0.896,label_noise,점이 가장자리에 몰림
+118722,Loc,none,0.466,model_limit,점이 중앙에 몰림
+35482,none,Edge-Loc,0.474,label_noise,점이 가장자리에 몰림
+87859,none,Edge-Loc,0.421,ambiguous,애매함
+18322,none,Edge-Loc,0.67,label_noise,점이 가장자리에 몰림
+37161,none,Edge-Loc,0.677,label_noise,점이 가장자리에 몰림
+113741,none,Edge-Loc,0.736,label_noise,점이 가장자리에 몰림
+160568,none,Edge-Loc,0.487,label_noise,"점이 중앙,가장자리에 몰림"
+120144,Edge-Ring,Edge-Loc,0.976,model_limit,high-confidence error
+161751,Edge-Loc,none,0.961,model_limit,high-confidence error
+108794,Scratch,none,0.96,label_noise,high-confidence error
+119638,Loc,Edge-Loc,0.96,model_limit,high-confidence error
+29026,Loc,none,0.958,model_limit,high-confidence error
+32403,Scratch,none,0.957,label_noise,high-confidence error
+63159,Loc,none,0.957,model_limit,high-confidence error
+152397,Scratch,Loc,0.954,model_limit,high-confidence error
+22033,Scratch,none,0.954,model_limit,high-confidence error
+13388,Scratch,none,0.951,model_limit,high-confidence error
+25257,Edge-Ring,Edge-Loc,0.95,model_limit,high-confidence error
+32863,Loc,none,0.944,model_limit,high-confidence error

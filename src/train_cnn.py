@@ -56,8 +56,8 @@ def logits_of(model, X, bs=1024):
     return torch.cat([model(to_tensor(X[i:i + bs])) for i in range(0, len(X), bs)]).numpy()
 
 
-def main(epochs=12, n_none=20000, bs=128):
-    X, y, classes, lots = load_npz()
+def main(epochs=12, n_none=20000, bs=128, data=None, name="cnn_lotsplit"):
+    X, y, classes, lots = load_npz(data) if data else load_npz()
     none = classes.index("none"); C = len(classes)
     tr, va, te = split(y, lots, mode="lot")
     rng = np.random.default_rng(SEED)
@@ -71,7 +71,7 @@ def main(epochs=12, n_none=20000, bs=128):
     opt = torch.optim.AdamW(model.parameters(), lr=2e-3, weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.OneCycleLR(opt, max_lr=3e-3, epochs=epochs,
                                                 steps_per_epoch=int(np.ceil(len(tr_bal) / bs)))
-    out = os.path.join(OUT, "cnn_lotsplit"); os.makedirs(out, exist_ok=True)
+    out = os.path.join(OUT, name); os.makedirs(out, exist_ok=True)
     hist, best, best_state = [], -1, None
     for ep in range(epochs):
         model.train(); t = time.time(); perm = rng.permutation(tr_bal); tot = 0.
@@ -122,4 +122,5 @@ def main(epochs=12, n_none=20000, bs=128):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser(); ap.add_argument("--epochs", type=int, default=12)
-    main(ap.parse_args().epochs)
+    ap.add_argument("--data", default=None); ap.add_argument("--name", default="cnn_lotsplit")
+    a = ap.parse_args(); main(a.epochs, data=a.data, name=a.name)

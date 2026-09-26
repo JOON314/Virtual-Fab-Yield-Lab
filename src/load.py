@@ -53,15 +53,25 @@ def resize_nearest(m: np.ndarray, size: int) -> np.ndarray:
     return m[np.ix_(ri, ci)]
 
 
-def build(size: int = 64, out: str = None):
-    out = out or os.path.join("data", f"wm811k_{size}.npz")
+def resize_max(m: np.ndarray, size: int) -> np.ndarray:
+    """칸 안에 불량 다이가 하나라도 있으면 불량(2)으로 남기는 축소.
+    nearest는 한 줄짜리 Scratch를 건너뛰어 지워버린다 (results/errors/scratch_resolution_check.png)."""
+    h, w = m.shape
+    r = (np.arange(size) * h / size).astype(int)
+    c = (np.arange(size) * w / size).astype(int)
+    return np.maximum.reduceat(np.maximum.reduceat(m, r, axis=0), c, axis=1)
+
+
+def build(size: int = 64, out: str = None, method: str = "nearest"):
+    out = out or os.path.join("data", f"wm811k_{size}{'' if method == 'nearest' else '_' + method}.npz")
+    resize = resize_nearest if method == "nearest" else resize_max
     df = load_raw()
     print(f"전체 웨이퍼: {len(df):,}")
     labels = df["failureType"].map(_label)
     df = df[labels.isin(CLASSES)].copy()
     df["label"] = labels[labels.isin(CLASSES)]
     print(f"라벨 있는 웨이퍼: {len(df):,}")
-    X = np.stack([resize_nearest(np.asarray(m, dtype=np.uint8), size)
+    X = np.stack([resize(np.asarray(m, dtype=np.uint8), size)
                   for m in df["waferMap"]])
     y = df["label"].map({c: i for i, c in enumerate(CLASSES)}).to_numpy(np.int64)
     dims = np.array([np.asarray(m).shape for m in df["waferMap"]])
@@ -74,4 +84,5 @@ def build(size: int = 64, out: str = None):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--size", type=int, default=64)
-    build(ap.parse_args().size)
+    ap.add_argument("--method", choices=["nearest", "max"], default="nearest")
+    a = ap.parse_args(); build(a.size, method=a.method)

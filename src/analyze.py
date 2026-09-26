@@ -16,7 +16,8 @@ import matplotlib.pyplot as plt
 from src.common import load_npz, OUT, CMAP
 
 MODELS = [("RF (random split)", "rf_randomsplit"), ("RF (lot split)", "rf_lotsplit"),
-          ("CNN v1 raw", "cnn_lotsplit/v1_raw"), ("CNN v2 calibrated", "cnn_lotsplit/v2_calibrated")]
+          ("CNN v1 raw", "cnn_lotsplit/v1_raw"), ("CNN v2 calibrated", "cnn_lotsplit/v2_calibrated"),
+          ("CNN v3 max-pool resize", "cnn_lotsplit_maxpool/v2_calibrated")]
 
 
 def load_metrics():
@@ -42,10 +43,10 @@ def comparison(rows, classes):
     lot_rows = [(l, m) for l, m in rows if "random" not in l]
     fig, ax = plt.subplots(figsize=(10, 4))
     w = 0.8 / len(lot_rows); xs = np.arange(len(classes))
-    colors = ["#9aa0a6", "#8fb3f0", "#2f6fde"]
+    colors = ["#9aa0a6", "#c6d7f5", "#8fb3f0", "#1f4fae"]
     for k, (l, m) in enumerate(lot_rows):
         ax.bar(xs + k * w, [m["per_class_f1"][c] for c in classes], w,
-               label=f"{l} (macro-F1 {m['macro_f1']:.3f})", color=colors[k % 3])
+               label=f"{l} (macro-F1 {m['macro_f1']:.3f})", color=colors[k % len(colors)])
     ax.set_xticks(xs + w * (len(lot_rows) - 1) / 2, classes, fontsize=9)
     ax.set_ylabel("F1 (test, unseen lots)"); ax.set_ylim(0, 1.05); ax.legend(fontsize=8, loc="lower left")
     ax.spines[["top", "right"]].set_visible(False)
@@ -91,7 +92,10 @@ def errors(classes, X, y):
                       "confidence": round(float(p[k, pred[k]]), 3), "verdict(label_noise/model_limit/ambiguous)": "", "note": "high-confidence error"})
     fig.suptitle("Most confident errors — label-noise candidates (human review)")
     fig.tight_layout(); fig.savefig(os.path.join(out, "confident_errors.png"), dpi=160); plt.close(fig)
-    with open(os.path.join(out, "review_sheet.csv"), "w", newline="", encoding="utf-8") as f:
+    sheet_path = os.path.join(out, "review_sheet.csv")
+    if os.path.exists(sheet_path):   # 사람 판정이 담긴 시트는 절대 덮어쓰지 않는다
+        sheet_path = os.path.join(out, "review_sheet_new.csv")
+    with open(sheet_path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(sheet[0].keys())); w.writeheader(); w.writerows(sheet)
     print("top confusions:", [(classes[t], classes[pr], int(off[t, pr])) for t, pr in pairs])
 

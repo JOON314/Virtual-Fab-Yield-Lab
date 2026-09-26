@@ -1,0 +1,30 @@
+{
+  "name": "CNN v2 (none-bias +1.75)",
+  "n": 25938,
+  "accuracy": 0.9769064692728815,
+  "macro_f1": 0.8807625251153022,
+  "macro_f1_defect_only": 0.8670713233934471,
+  "per_class_recall": {
+    "Center": 0.9099,
+    "Donut": 0.9639,
+    "Edge-Loc": 0.8201,
+    "Edge-Ring": 0.9552,
+    "Loc": 0.7737,
+    "Near-full": 0.9565,
+    "Random": 0.9385,
+    "Scratch": 0.8659,
+    "none": 0.9919
+  },
+  "per_class_f1": {
+    "Center": 0.9078,
+    "Donut": 0.9143,
+    "Edge-Loc": 0.8422,
+    "Edge-Ring": 0.9716,
+    "Loc": 0.8012,
+    "Near-full": 0.7719,
+    "Random": 0.9139,
+    "Scratch": 0.8136,
+    "none": 0.9903
+  },
+  "none_bias": 1.75
+}

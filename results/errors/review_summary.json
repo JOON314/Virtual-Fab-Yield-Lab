@@ -1,0 +1,45 @@
+{
+  "n": 30,
+  "total": {
+    "model_limit": 14,
+    "label_noise": 14,
+    "ambiguous": 2
+  },
+  "by_pair": {
+    "Loc → Edge-Loc": {
+      "label_noise": 0,
+      "model_limit": 1,
+      "ambiguous": 0
+    },
+    "Scratch → Loc": {
+      "label_noise": 0,
+      "model_limit": 1,
+      "ambiguous": 0
+    },
+    "Edge-Ring → Edge-Loc": {
+      "label_noise": 0,
+      "model_limit": 2,
+      "ambiguous": 0
+    },
+    "Scratch → none": {
+      "label_noise": 2,
+      "model_limit": 2,
+      "ambiguous": 0
+    },
+    "none → Edge-Loc": {
+      "label_noise": 5,
+      "model_limit": 0,
+      "ambiguous": 1
+    },
+    "Edge-Loc → none": {
+      "label_noise": 2,
+      "model_limit": 4,
+      "ambiguous": 1
+    },
+    "Loc → none": {
+      "label_noise": 5,
+      "model_limit": 4,
+      "ambiguous": 0
+    }
+  }
+}
